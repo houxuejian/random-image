@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class ImgGenerator {
+public final class ImgGenerator {
 //	public static final int W = 380;
 	public static final int W = 420;
 	public static final int X = 8;
@@ -20,7 +20,7 @@ public class ImgGenerator {
 	public static final Color BACKCOLOR = Color.BLACK;
 	public static final int COLOR = 0xFFBBEFFF;
 	
-	public ImgGenerator(int i) {
+	private ImgGenerator(int i) {
 		if (i == 0) {
 			List<Integer> list = RandomInput.getListFromStdin();
 			Integer[] integers = new Integer[list.size()];
