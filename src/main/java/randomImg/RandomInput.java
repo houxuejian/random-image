@@ -35,7 +35,7 @@ public class RandomInput {
 	}
 	
 	public static Integer[] gen(int num) {
-		if (num % 2 == 1) {
+		if ((num & 1) == 1) {
 			num --;
 		}
 		
