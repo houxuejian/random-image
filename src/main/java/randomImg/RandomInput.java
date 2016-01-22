@@ -35,11 +35,9 @@ public class RandomInput {
 	}
 	
 	public static Integer[] gen(int num) {
-		if ((num & 1) == 1) {
-			num --;
-		}
+		int size = (num & 1) == 1 ? num - 1 : num;
 		
-		Integer[] list = new Integer[num];
+		Integer[] list = new Integer[size];
 		Random r = new Random();
 		for (int i = 0; i < list.length; i++) {
 			int tmp = r.nextInt(ImgGenerator.W);
@@ -50,18 +48,17 @@ public class RandomInput {
 	}
 	
 	private static void filter(Integer[] integers) {
-		Random r = new Random();
 		//横纵条纹
 		for (int i = 0; i < integers.length; i++) {
 			if (integers[i] % 13 == 0 || integers[i] % 9 == 0) {
 				integers[i] = 0;
 			}
 		}
+		Random r = new Random();
 		//密度变化
 		for (int i = 0; i < integers.length; i++) {
 			double d = integers[i] / (double)ImgGenerator.W;
 			double ran = r.nextDouble();
-			
 			if (Math.pow(Math.abs(ran - d), 0.375) < 0.77) {
 				integers[i] = 0;
 			}
@@ -69,6 +66,4 @@ public class RandomInput {
 		}
 	}
 	
-	public static void main(String[] args) {
-	}
 }
