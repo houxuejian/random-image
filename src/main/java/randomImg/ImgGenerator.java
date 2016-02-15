@@ -140,6 +140,7 @@ public final class ImgGenerator {
 		}
 	}
 
+	
 	public static void main(String[] args) {
 		int i = JOptionPane.showConfirmDialog(null, "输入随机数？ -1结束");
 		if (i == 0 || i == 1) {
