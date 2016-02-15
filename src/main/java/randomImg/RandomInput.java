@@ -36,15 +36,24 @@ public class RandomInput {
 	
 	public static Integer[] gen(int num) {
 		int size = (num & 1) == 1 ? num - 1 : num;
-		
 		Integer[] list = new Integer[size];
-		Random r = new Random();
 		for (int i = 0; i < list.length; i++) {
-			int tmp = r.nextInt(ImgGenerator.W);
-			list[i] = tmp;
+			list[i] = (int) getRandom();
 		}
-		filter(list);
+//		filter(list);
 		return list;
+	}
+	
+	private static double getRandom(){
+		Random r = new Random();
+		double r1 = r.nextGaussian();
+		double r2 = r.nextGaussian();
+		double r3 = r.nextGaussian();
+		int tmp = (int) (r1/r2 * 2 + (ImgGenerator.W / 2.0));
+		tmp = (int) (r1* r1*r1 + (ImgGenerator.W / 2.0));
+		tmp = (int) (r1 * 8 + (ImgGenerator.W / 2.0));
+		tmp = r.nextInt(ImgGenerator.W);
+		return tmp;
 	}
 	
 	private static void filter(Integer[] integers) {
