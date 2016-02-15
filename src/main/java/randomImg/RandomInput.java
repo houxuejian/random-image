@@ -5,8 +5,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * 产生或输入随机数
+ * @author hou
+ *
+ */
 public class RandomInput {
 	
+	/**
+	 * 标准输入
+	 * @return
+	 */
 	public static List<Integer> getListFromStdin() {
 		List<Integer> list = new ArrayList<>();
 		
@@ -26,6 +35,9 @@ public class RandomInput {
 		return list;
 	}
 	
+	/**
+	 * 标准输出随机数
+	 */
 	public static void stdoutRandom() {
 		Random r = new Random();
 		for (int i = 0; i < 500000; i++) {
@@ -34,6 +46,11 @@ public class RandomInput {
 		}
 	}
 	
+	/**
+	 * 生成偶数个随机数，返回集合
+	 * @param num
+	 * @return
+	 */
 	public static Integer[] gen(int num) {
 		int size = (num & 1) == 1 ? num - 1 : num;
 		Integer[] list = new Integer[size];
@@ -44,6 +61,10 @@ public class RandomInput {
 		return list;
 	}
 	
+	/**
+	 * 产生一个随机数
+	 * @return
+	 */
 	private static double getRandom(){
 		Random r = new Random();
 		double r1 = r.nextGaussian();
@@ -56,6 +77,10 @@ public class RandomInput {
 		return tmp;
 	}
 	
+	/**
+	 * 随机数过滤规则
+	 * @param integers
+	 */
 	private static void filter(Integer[] integers) {
 		//横纵条纹
 		for (int i = 0; i < integers.length; i++) {
