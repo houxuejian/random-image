@@ -50,9 +50,9 @@ public class RandomInput {
 		double r2 = r.nextGaussian();
 		double r3 = r.nextGaussian();
 		int tmp = (int) (r1/r2 * 2 + (ImgGenerator.W / 2.0));
-		tmp = (int) (r1* r1*r1 + (ImgGenerator.W / 2.0));
-		tmp = (int) (r1 * 8 + (ImgGenerator.W / 2.0));
-		tmp = r.nextInt(ImgGenerator.W);
+//		tmp = (int) (r1* r1*r1 + (ImgGenerator.W / 2.0));
+//		tmp = (int) (r1 * 8 + (ImgGenerator.W / 2.0));
+//		tmp = r.nextInt(ImgGenerator.W);
 		return tmp;
 	}
 	
