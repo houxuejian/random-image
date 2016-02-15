@@ -17,6 +17,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/**
+ * 显示图像的类
+ * @author hou
+ *
+ */
 public final class ImgGenerator {
 //	public static final int W = 380;
 	public static final int W = 420;
@@ -27,7 +32,7 @@ public final class ImgGenerator {
 	public static final int COLOR = 0XFF0E10;
 	public static final int COLOR2 = 0xFFBBEFFF;
 	
-	public static final int POINTS = 200000;
+	public static final int POINTS = 40000;
 	
 	final BufferedImage img = new BufferedImage(W, W , BufferedImage.TYPE_INT_RGB);
 	
@@ -48,9 +53,9 @@ public final class ImgGenerator {
 //			showImage(RandomInput.gen(1400000));
 			Integer[] integers = RandomInput.gen(POINTS);
 			Map<Integer, Long> map = probabilityDensity(integers);
-			drawProbabilityDensity(map);
 			
 			drawRandom(integers);
+			drawProbabilityDensity(map);
 			showImage();
 		}
 	}
@@ -104,6 +109,9 @@ public final class ImgGenerator {
 		img.flush();
 	}
 	
+	/**
+	 * 初始化图像
+	 */
 	public void init() {
 		Graphics g = img.getGraphics();
 		g.setColor(BACKCOLOR);
@@ -130,6 +138,10 @@ public final class ImgGenerator {
 		jFrame.repaint();
 	}
 	
+	/**
+	 * 导出文件
+	 * @param img
+	 */
 	private void createFile(BufferedImage img) {
 		File file = new File("h:/a.png");
 		try {
